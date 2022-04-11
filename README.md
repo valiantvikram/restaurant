@@ -26,8 +26,8 @@ UPD_TS           TIMESTAMP(6)
 
 
 T_INF_RCP_DTL
-Name    Null? Type          
-------- ----- ------------- 
+Name          Type          
+-------       ------------- 
 RCP_NM        VARCHAR2(100) 
 ING_NM        VARCHAR2(100) 
 ING_MSR       VARCHAR2(100) 
@@ -38,8 +38,8 @@ RCP_KY        NUMBER
 
 
 T_EXEC_LOG
-Name          Null? Type          
-------------- ----- ------------- 
+Name               Type          
+-------------      ------------- 
 TABLE_NM            VARCHAR2(20)  
 MESSAGE             VARCHAR2(200) 
 ELASPSED_TIME       NUMBER        
@@ -75,8 +75,6 @@ ng serve
 - 2 hours for initial setup. (Downloading & running SQL DB, JDK, Eclipse, VS Code on local machine)
 - 8 hours for total coding. Includes all the stuff from designing the schema to writing the last part of UI code. 
 - 30 minutes of testing. (And yes, there are few validations missed, no save/delete confirmation in the form of dialogs except from the API in the dev tools, all for the lack of time!)
-#
-#
 #
 
 > Even if the UI seems bland, I tried
