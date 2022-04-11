@@ -1,5 +1,5 @@
 # restaurant
-##### _an application to take-away every chef's invetory management worries_
+##### _an application to take-away every chef's inventory management worries_
 
 
 #
