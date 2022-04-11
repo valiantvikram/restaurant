@@ -1,0 +1,96 @@
+<div class = "container-fluid p-0">
+
+  <div class="row title mt-4">
+    <h2>Restaurant Cuisine Management</h2>
+  </div>
+</div>
+
+<mat-tab-group class="row mt-10"mat-align-tabs="center" [selecetedIndeex]="tabIndex" (selectedTabChange)="tabChanged($event)"> 
+  <mat-tab label = "Menu">
+    <br>
+    <section>
+      <div class="gridDiv">
+        <button mat-button color="primary" (click) = "insertMenu()">Add</button>&nbsp;&nbsp;
+        <button mat-button color="accent" (click) = "save()" [disabled]="!menuSaveEnable">Save</button>&nbsp;&nbsp;
+        <button mat-button color="warn" (click) = "delete()">Delete</button>&nbsp;&nbsp;
+      </div>
+    </section>
+    
+    <br>
+    <div class = "gridDiv">
+  
+      <ag-grid-angular 
+        class="ag-theme-alpine"
+        [rowData]="[]" 
+        [columnDefs]="[]"
+        [gridOptions]="gridOptions"
+        (cellValueChanged) = "onCellValueChanged($event)"
+        style="width: 40%; height: 90vh; position:sticky !important"
+        
+        >
+      </ag-grid-angular>
+    
+    </div>
+
+  </mat-tab>
+  <mat-tab label = "Recipes">
+    <br>
+    <section>
+      <div class="gridDiv">
+        <button mat-button color="primary" (click) = "insertMenu()">Add</button>&nbsp;&nbsp;
+        <button mat-button color="accent" (click) = "save()"  [disabled]="!recipeSaveEnable">Save</button>&nbsp;&nbsp;
+        <button mat-button color="warn"(click) = "delete()">Delete</button>&nbsp;&nbsp;
+      </div>
+    </section>
+    
+    <br>
+    <div class = "gridDiv">
+  
+      <ag-grid-angular 
+        class="ag-theme-alpine"
+        [rowData]="[]" 
+        [columnDefs]="[]"
+        [gridOptions]="gridOptions1"
+        (cellValueChanged) = "onCellValueChanged($event)"
+        style="width: 60%; height: 90vh; position:sticky !important"
+        
+        >
+      </ag-grid-angular>
+    
+    </div>
+
+  </mat-tab>
+  <mat-tab label = "Calculate Item per Servings">
+    <br>
+    <section>
+      <div class="gridDiv">
+        Enter the number of servings:&nbsp;&nbsp;
+        <br>
+        <form class="example-form">
+          <mat-form-field class="mat-form-field" [style.width.%]="50" appearance="fill">
+            <input matInput name = "input" [(ngModel)]="numServings">&nbsp;&nbsp;
+          </mat-form-field>
+        </form>
+        <button mat-button color="primary" (click) = "OpenIngredients()">Submit</button>&nbsp;&nbsp;
+      </div>
+    </section>
+    
+    <br>
+    <div class = "gridDiv">
+  
+  
+      <ag-grid-angular 
+        class="ag-theme-alpine"
+        [rowData]="[]" 
+        [columnDefs]="[]"
+        [gridOptions]="gridOptions2"
+        style="width: 80%; height: 90vh; position:relative;"
+        
+        >
+      </ag-grid-angular>
+    
+    </div>
+
+  </mat-tab>
+</mat-tab-group>
+  
